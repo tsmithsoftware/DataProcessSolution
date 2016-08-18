@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.API", "DataProcessSolution.API\DataProcessSolution.API.csproj", "{BE92C329-A939-49AC-89EC-89030E68D0F1}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.API.Frontend", "DataProcessSolution.API\DataProcessSolution.API.Frontend.csproj", "{BE92C329-A939-49AC-89EC-89030E68D0F1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.API.Backend", "DataProcessSolution.API.Backend\DataProcessSolution.API.Backend.csproj", "{D1D19CEA-B844-457A-9EF6-930310267BFE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.Tests", "DataProcessSolution.Tests\DataProcessSolution.Tests.csproj", "{5B565ABA-0C16-48EE-B483-31F2B720D28A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.FileHandlingService", "DataProcessSolution.FileHandlingService\DataProcessSolution.FileHandlingService.csproj", "{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{BE92C329-A939-49AC-89EC-89030E68D0F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BE92C329-A939-49AC-89EC-89030E68D0F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BE92C329-A939-49AC-89EC-89030E68D0F1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D1D19CEA-B844-457A-9EF6-930310267BFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1D19CEA-B844-457A-9EF6-930310267BFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1D19CEA-B844-457A-9EF6-930310267BFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1D19CEA-B844-457A-9EF6-930310267BFE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B565ABA-0C16-48EE-B483-31F2B720D28A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B565ABA-0C16-48EE-B483-31F2B720D28A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B565ABA-0C16-48EE-B483-31F2B720D28A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B565ABA-0C16-48EE-B483-31F2B720D28A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
