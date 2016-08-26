@@ -48,9 +48,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataFileList.cs" />
-    <Compile Include="IFileHandlingService.cs" />
+    <Compile Include="FileHandlerService.cs" />
+    <Compile Include="IFileHandlerService.cs" />
+    <Compile Include="ProcessedFile.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="FileHandlingService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
