@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.Tests",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.FileHandlingService", "DataProcessSolution.FileHandlingService\DataProcessSolution.FileHandlingService.csproj", "{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.WorkerRole", "DataProcessSolution.WorkerRole\DataProcessSolution.WorkerRole.csproj", "{EFD9C8F4-5054-4EAB-BF36-6538F92C6624}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFD9C8F4-5054-4EAB-BF36-6538F92C6624}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFD9C8F4-5054-4EAB-BF36-6538F92C6624}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFD9C8F4-5054-4EAB-BF36-6538F92C6624}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFD9C8F4-5054-4EAB-BF36-6538F92C6624}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
