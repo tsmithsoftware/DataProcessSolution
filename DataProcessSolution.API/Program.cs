@@ -1,6 +1,11 @@
 ﻿using System;
+using System.Xml.Linq;
+using Castle.MicroKernel.Registration;
+using Castle.Windsor;
 using DataProcessSolution.API.Backend;
 using DataProcessSolution.API.Backend.Utilities;
+using DataProcessSolution.API.Frontend.Implementations;
+using DataProcessSolution.API.Frontend.Interfaces;
 
 namespace DataProcessSolution.API.Frontend
 {
@@ -8,15 +13,15 @@ namespace DataProcessSolution.API.Frontend
     {
         static void Main(string[] args)
         {
-            string name;
-            Console.Out.WriteLine("Please enter the file location for the Names file: ");
-            name = Console.ReadLine();
-            string addresses;
-            Console.Out.WriteLine("Please enter the file location for the Addresses file: ");
-            addresses = Console.ReadLine();
-            Console.Out.WriteLine("Please enter the file location for the Orders file: ");
-            string orders = Console.ReadLine();
-            Console.Out.WriteLine("Uploading blobs");
+            var container = new WindsorContainer();
+            container.Register(Component.For<IUserInterface>().ImplementedBy<ConsoleUserInterface>());
+            var userInterface = container.Resolve<IUserInterface>();
+            
+            string name = userInterface.GetFileLocationForNamesFile();
+            string addresses = userInterface.GetFileLocationForAddressesFile();
+            string orders = userInterface.GetFileLocationForOrdersFile();
+
+            userInterface.WriteOutput("Uploading blobs");
             BlobStorageHandler blobHandler = new BlobStorageHandler(new FileHandler());
             var savedBlobFileNames = blobHandler.UploadBlobs(name, addresses, orders);
             Console.Out.WriteLine(savedBlobFileNames);

@@ -88,6 +88,13 @@
       <Project>{D1D19CEA-B844-457A-9EF6-930310267BFE}</Project>
       <Name>DataProcessSolution.API.Backend</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DataProcessSolution.API\DataProcessSolution.API.Frontend.csproj">
+      <Project>{be92c329-a939-49ac-89ec-89030e68d0f1}</Project>
+      <Name>DataProcessSolution.API.Frontend</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FrontEnd Tests\" />
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
