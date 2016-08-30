@@ -12,9 +12,9 @@ namespace DataProcessSolution.WorkerRole.Processes
         protected override void Initialize()
         {
             Register(new JoinUserRecords()
-           .Left(new UserNameRead(NamesFile))
-           .Right(new UserAddressRead(AddressesFile))
-       );
+                .Left(new UserNameRead(NamesFile))
+                .Right(new UserAddressRead(AddressesFile))
+                );
 
             Register(new UserFullWrite(OutputFile));
         }

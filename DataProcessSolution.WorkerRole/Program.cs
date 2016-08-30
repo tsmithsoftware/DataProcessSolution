@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Runtime.Remoting.Messaging;
 using DataProcessSolution.WorkerRole.Processes;
 
 namespace DataProcessSolution.WorkerRole

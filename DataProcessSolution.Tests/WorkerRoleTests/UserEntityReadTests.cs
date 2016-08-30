@@ -15,7 +15,7 @@ namespace DataProcessSolution.Tests.WorkerRoleTests
     [DeploymentItem(@".\TestFiles\Addresses.csv")]
     [DeploymentItem(@".\TestFiles\Names.csv")]
     [DeploymentItem(@".\TestFiles\Orders.csv")]
-    public class UserAddressReadTests
+    public class UserEntityReadTests
     {
         [Test]
         public void TestUserAddressReadCanReadRecords()

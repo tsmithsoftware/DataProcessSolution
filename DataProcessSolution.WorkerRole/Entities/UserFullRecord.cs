@@ -1,5 +1,8 @@
-﻿namespace DataProcessSolution.WorkerRole.Entities
+﻿using FileHelpers;
+
+namespace DataProcessSolution.WorkerRole.Entities
 {
+    [DelimitedRecord(",")]
     public class UserFullRecord
     {
         public string UserName { get; set; }

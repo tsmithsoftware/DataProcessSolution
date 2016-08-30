@@ -20,7 +20,7 @@ namespace DataProcessSolution.WorkerRole.Operations
         public override IEnumerable<Row> Execute(IEnumerable<Row> rows)
         {
             FluentFile engine = FluentFile.For<UserFullRecord>();
-            engine.HeaderText = "Id\tName\tAddress";
+            engine.HeaderText = "Name,Address,Order";
             using (FileEngine file = engine.To(FilePath))
             {
                 foreach (Row row in rows)
