@@ -20,6 +20,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProcessSolution.Documentation", "DataProcessSolution.Documentation", "{92B7326B-6A77-4656-8085-FD40CC611F78}"
 	ProjectSection(SolutionItems) = preProject
 		..\Data Processing Solution\Data Processing Solution Project.doc = ..\Data Processing Solution\Data Processing Solution Project.doc
+		TextFile1.txt = TextFile1.txt
 	EndProjectSection
 EndProject
 Global
