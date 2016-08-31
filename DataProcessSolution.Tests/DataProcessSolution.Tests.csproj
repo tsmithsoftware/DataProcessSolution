@@ -127,6 +127,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="FileHandlingServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\UserFullRecordComparator.cs" />
     <Compile Include="WorkerRoleTests\JoinUserRecordsTests.cs" />
