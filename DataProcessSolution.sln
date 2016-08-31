@@ -17,9 +17,9 @@ Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "DataProcessSolution.JobStat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataProcessSolution.DAL", "DataProcessSolution.DAL\DataProcessSolution.DAL.csproj", "{1026C82D-C3B9-45DC-B535-84BF6BA49EDF}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataProcessSolution.Documentation", "DataProcessSolution.Documentation", "{92B7326B-6A77-4656-8085-FD40CC611F78}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{154D37FD-C9F6-4831-906B-F3E267DB19A9}"
 	ProjectSection(SolutionItems) = preProject
-		..\Data Processing Solution\Data Processing Solution Project.doc = ..\Data Processing Solution\Data Processing Solution Project.doc
+		DataProcessSolution.Documentation\Data Processing Solution Project.doc = DataProcessSolution.Documentation\Data Processing Solution Project.doc
 	EndProjectSection
 EndProject
 Global
