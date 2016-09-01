@@ -3,6 +3,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using DataProcessSolution.SharedObjects;
+using DataProcessSolution.FileHandlingService;
 
 namespace DataProcessSolution.SignalR.Server
 {
@@ -39,14 +40,9 @@ namespace DataProcessSolution.SignalR.Server
         {
             Console.WriteLine($"Doing something with the file " +
                               $"{file.AddressFileReference.Name} in container {file.AddressFileReference.ContainerName}");
-            Thread.Sleep(1000);
-            Console.WriteLine("Finished processing");
-            return new FileReference()
-            {
-                Name = "SomeProcessedFile",
-                BlockId = "BlockId",
-                ContainerName = "djksaol"
-            };
+            Thread.Sleep(1000); //calling WCF Service
+            FileHandlerService service = new FileHandlerService();
+            return service.ProcessFile(file);
         }
     }
 }

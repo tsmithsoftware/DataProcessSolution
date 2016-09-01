@@ -56,6 +56,16 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProcessSolution.DAL\DataProcessSolution.DAL.csproj">
+      <Project>{1026C82D-C3B9-45DC-B535-84BF6BA49EDF}</Project>
+      <Name>DataProcessSolution.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProcessSolution.SharedObjects\DataProcessSolution.SharedObjects.csproj">
+      <Project>{024DCAE5-FF72-4212-97D2-EDBC064721A8}</Project>
+      <Name>DataProcessSolution.SharedObjects</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <VSToolsPath Condition="'$(VSToolsPath)' == '' and '$(VisualStudioVersion)' != '' and '$(VisualStudioVersion)' != '11.0'">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>

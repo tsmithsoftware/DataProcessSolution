@@ -101,10 +101,21 @@
     <Content Include="Scripts\jquery.signalR-2.2.1.min.js" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\DataProcessSolution.DAL\DataProcessSolution.DAL.csproj">
+      <Project>{1026C82D-C3B9-45DC-B535-84BF6BA49EDF}</Project>
+      <Name>DataProcessSolution.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProcessSolution.FileHandlingService\DataProcessSolution.FileHandlingService.csproj">
+      <Project>{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}</Project>
+      <Name>DataProcessSolution.FileHandlingService</Name>
+    </ProjectReference>
     <ProjectReference Include="..\DataProcessSolution.SharedObjects\DataProcessSolution.SharedObjects.csproj">
       <Project>{024DCAE5-FF72-4212-97D2-EDBC064721A8}</Project>
       <Name>DataProcessSolution.SharedObjects</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
