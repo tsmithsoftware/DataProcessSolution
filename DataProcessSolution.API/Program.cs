@@ -44,28 +44,23 @@ namespace DataProcessSolution.API.Frontend
             connection.Start().Wait();
             JobReference job = new JobReference()
             {
-                NamesFileReference = new FileReference()
-                {
-                    BlockId = Guid.NewGuid().ToString(),
-                    ContainerName = BlobContainerName,
-                    Name = name
-                },
-                AddressFileReference = new FileReference()
-                {
-                    BlockId = Guid.NewGuid().ToString(),
-                    ContainerName = BlobContainerName,
-                    Name = addresses
-                },
-                OrdersFileReference = new FileReference()
-                {
-                    BlockId = Guid.NewGuid().ToString(),
-                    ContainerName = BlobContainerName,
-                    Name = orders
-                }
+                NamesFileReference = CreateNewFileReferenceObject(name),
+                AddressFileReference = CreateNewFileReferenceObject(addresses),
+                OrdersFileReference = CreateNewFileReferenceObject(orders)
             };
                 Task task = _hub.Invoke<FileReference>("ProcessFile", job)
                     .ContinueWith(ProcessTask);
             }
+
+        private static FileReference CreateNewFileReferenceObject(string fileName)
+        {
+            return new FileReference()
+            {
+                BlockId = Guid.NewGuid().ToString(),
+                ContainerName = BlobContainerName,
+                Name = fileName
+            };
+        }
 
         private static void ProcessTask(Task<FileReference> tsk)
         {
