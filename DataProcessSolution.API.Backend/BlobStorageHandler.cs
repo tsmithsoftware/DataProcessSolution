@@ -1,15 +1,18 @@
-﻿using Microsoft.WindowsAzure.Storage;
+﻿using System;
+using Microsoft.WindowsAzure.Storage;
 using System.Configuration;
 using System.IO;
 using Microsoft.WindowsAzure.Storage.Blob;
 using System.Collections.Generic;
 using DataProcessSolution.API.Backend.Utilities;
+using DataProcessSolution.SharedObjects;
 
 namespace DataProcessSolution.API.Backend
 {
     public class BlobStorageHandler
     {
         private readonly IFileHandler _fileHandler;
+        private static readonly string BlobContainerName = ConfigurationManager.AppSettings["AzureContainerName"];
         public BlobStorageHandler(IFileHandler fileHandler)
         {
             _fileHandler = fileHandler;
@@ -28,7 +31,7 @@ namespace DataProcessSolution.API.Backend
             var blobClient = storageAccount.CreateCloudBlobClient();
             
             CloudBlobContainer container = blobClient.GetContainerReference(
-                ConfigurationManager.AppSettings["AzureContainerName"]
+                BlobContainerName
                 );
 
             container.CreateIfNotExists();
@@ -47,9 +50,14 @@ namespace DataProcessSolution.API.Backend
                 {
                     CloudBlockBlob blockBlob = container.GetBlockBlobReference(file.Name);
                     blockBlob.UploadFromStream(new FileStream(file.FullName, FileMode.Open));
-                    results.Add(new UploadResult(true,location));
+                    FileReference reference = new FileReference()
+                    {
+                        BlockId = Guid.NewGuid().ToString(),
+                        ContainerName = BlobContainerName,
+                        Name = file.Name
+                    };
+                    results.Add(new UploadResult(true,reference));
                 }
-                else results.Add(new UploadResult(false,location));
             }
             return results;
         }

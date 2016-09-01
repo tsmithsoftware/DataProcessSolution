@@ -41,7 +41,16 @@
       <HintPath>..\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="Microsoft.AspNet.SignalR.Client, Version=2.2.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.SignalR.Client.2.2.1\lib\net45\Microsoft.AspNet.SignalR.Client.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=6.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -64,6 +73,10 @@
     <ProjectReference Include="..\DataProcessSolution.API.Backend\DataProcessSolution.API.Backend.csproj">
       <Project>{D1D19CEA-B844-457A-9EF6-930310267BFE}</Project>
       <Name>DataProcessSolution.API.Backend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProcessSolution.SharedObjects\DataProcessSolution.SharedObjects.csproj">
+      <Project>{024dcae5-ff72-4212-97d2-edbc064721a8}</Project>
+      <Name>DataProcessSolution.SharedObjects</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup />

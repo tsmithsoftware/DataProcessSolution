@@ -72,7 +72,6 @@
     <Compile Include="BlobStorageHandler.cs" />
     <Compile Include="IFileHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ServiceHandler.cs" />
     <Compile Include="Utilities\FileHandler.cs" />
     <Compile Include="Utilities\UploadResult.cs" />
   </ItemGroup>
@@ -82,6 +81,12 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DataProcessSolution.SharedObjects\DataProcessSolution.SharedObjects.csproj">
+      <Project>{024DCAE5-FF72-4212-97D2-EDBC064721A8}</Project>
+      <Name>DataProcessSolution.SharedObjects</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
