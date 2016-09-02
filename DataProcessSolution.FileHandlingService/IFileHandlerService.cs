@@ -1,4 +1,5 @@
 ﻿using System.ServiceModel;
+using DataProcessSolution.SharedObjects;
 
 namespace DataProcessSolution.FileHandlingService
 {
@@ -6,6 +7,7 @@ namespace DataProcessSolution.FileHandlingService
     public interface IFileHandlerService
     {
         [OperationContract]
-        string ProcessFile(ProcessedFile processedFile);
+        //string ProcessFile(ProcessedFile processedFile);
+        FileReference ProcessFile(JobReference job);
     }
 }
