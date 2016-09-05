@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ServiceConfiguration serviceName="DataProcessSolution.ProcessingCloudService" xmlns="http://schemas.microsoft.com/ServiceHosting/2008/10/ServiceConfiguration" osFamily="4" osVersion="*" schemaVersion="2015-04.2.6">
+  <Role name="WCFWorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=rjportalvhdsj0jgs30bmw5j;AccountKey=MbnbvVrYuvyUjWHWpPHMeUnRuJbn4nVc06p9+gzhndM97+Qb3bHjBTpFG4PIwy+bA7dArGAmAoVga7kUVnMrLw==" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="admin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEFVVJZRhdeWoTXQ5Co4n/iwwDQYJKoZIhvcNAQEBBQAEggEAbmlcgt43xOdpSYtF7o6sUIU0X4alUQsdm/lyPFvk/8b1w8R+9JhA891VG/2O1WSr+luWu1jCbBa2hYzk856417aDw5k3VBE4eDDpIz2s7zhCs5q0NEH+V5YGqN+aTM6cpL8/nSZTgOY9XaXFPP0DuGPjY9d331MsPx1Y5CkIdqiv/XjrWlywvuUmS+HaSG4EflO7qipze4Tn4XZSgyuVMSrkDRw93vxGwzb2DyB0LB5WccJrVM6w4WoSpNduaD9E1tqSdpnT9UydcjNVcD3Zut1X7p0gPCKrVU4CVOOJFa7CZDC1PctZj2K9crGzOv3rqz/KiCbbRfG6Uz8PBV1NzTAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECF5kkrF2H4u+gBDQZ0VZOWpN7jBr91d5ngs8" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2017-09-05T23:59:59.0000000+01:00" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteForwarder.Enabled" value="true" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="05b516a5-2573-42ed-81a9-c2ea6fb2aca2" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="59FCE03D505F7BE7B3EACE79DE82C19F846895EF" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+  <Role name="LoadBalancerWorkerRole">
+    <Instances count="1" />
+    <ConfigurationSettings>
+      <Setting name="Microsoft.WindowsAzure.Plugins.Diagnostics.ConnectionString" value="DefaultEndpointsProtocol=https;AccountName=rjportalvhdsj0jgs30bmw5j;AccountKey=MbnbvVrYuvyUjWHWpPHMeUnRuJbn4nVc06p9+gzhndM97+Qb3bHjBTpFG4PIwy+bA7dArGAmAoVga7kUVnMrLw==" />
+      <Setting name="Microsoft.ServiceBus.ConnectionString" value="Endpoint=sb://dataprocesssolution.servicebus.windows.net;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=B/qjGxfSt1npv68gu+LEy7Cj/ptBwsZGLp9snU/Gfbc=" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.Enabled" value="true" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountUsername" value="admin" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountEncryptedPassword" value="MIIBnQYJKoZIhvcNAQcDoIIBjjCCAYoCAQAxggFOMIIBSgIBADAyMB4xHDAaBgNVBAMME1dpbmRvd3MgQXp1cmUgVG9vbHMCEFVVJZRhdeWoTXQ5Co4n/iwwDQYJKoZIhvcNAQEBBQAEggEAbmlcgt43xOdpSYtF7o6sUIU0X4alUQsdm/lyPFvk/8b1w8R+9JhA891VG/2O1WSr+luWu1jCbBa2hYzk856417aDw5k3VBE4eDDpIz2s7zhCs5q0NEH+V5YGqN+aTM6cpL8/nSZTgOY9XaXFPP0DuGPjY9d331MsPx1Y5CkIdqiv/XjrWlywvuUmS+HaSG4EflO7qipze4Tn4XZSgyuVMSrkDRw93vxGwzb2DyB0LB5WccJrVM6w4WoSpNduaD9E1tqSdpnT9UydcjNVcD3Zut1X7p0gPCKrVU4CVOOJFa7CZDC1PctZj2K9crGzOv3rqz/KiCbbRfG6Uz8PBV1NzTAzBgkqhkiG9w0BBwEwFAYIKoZIhvcNAwcECF5kkrF2H4u+gBDQZ0VZOWpN7jBr91d5ngs8" />
+      <Setting name="Microsoft.WindowsAzure.Plugins.RemoteAccess.AccountExpiration" value="2017-09-05T23:59:59.0000000+01:00" />
+      <Setting name="APPINSIGHTS_INSTRUMENTATIONKEY" value="05b516a5-2573-42ed-81a9-c2ea6fb2aca2" />
+    </ConfigurationSettings>
+    <Certificates>
+      <Certificate name="Microsoft.WindowsAzure.Plugins.RemoteAccess.PasswordEncryption" thumbprint="59FCE03D505F7BE7B3EACE79DE82C19F846895EF" thumbprintAlgorithm="sha1" />
+    </Certificates>
+  </Role>
+</ServiceConfiguration>

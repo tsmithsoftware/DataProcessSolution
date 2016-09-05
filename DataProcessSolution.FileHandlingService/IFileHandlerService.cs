@@ -7,7 +7,6 @@ namespace DataProcessSolution.FileHandlingService
     public interface IFileHandlerService
     {
         [OperationContract]
-        //string ProcessFile(ProcessedFile processedFile);
         FileReference ProcessFile(JobReference job,string connectionId);
     }
 }
