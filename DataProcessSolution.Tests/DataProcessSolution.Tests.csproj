@@ -59,6 +59,14 @@
       <HintPath>..\packages\Common.Logging.Core.3.0.0\lib\net40\Common.Logging.Core.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FileHelpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=3e0c08d59cc3d657, processorArchitecture=MSIL">
       <HintPath>..\packages\FileHelpers.2.0.0.0\lib\FileHelpers.dll</HintPath>
       <Private>True</Private>
@@ -113,6 +121,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
   </ItemGroup>
   <Choose>
     <When Condition="('$(VisualStudioVersion)' == '10.0' or '$(VisualStudioVersion)' == '') and '$(TargetFrameworkVersion)' == 'v3.5'">
@@ -122,11 +131,14 @@
     </When>
     <Otherwise>
       <ItemGroup>
-        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework" />
+        <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework">
+          <Private>False</Private>
+        </Reference>
       </ItemGroup>
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="DAL\ContextTest.cs" />
     <Compile Include="FileHandlingServiceTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Utilities\UserFullRecordComparator.cs" />
@@ -136,6 +148,7 @@
     <Compile Include="WorkerRoleTests\UserFullWriteTests.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="App.config" />
     <None Include="packages.config" />
     <Content Include="TestFiles\Addresses.csv">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
@@ -155,6 +168,18 @@
     <ProjectReference Include="..\DataProcessSolution.API\DataProcessSolution.API.Frontend.csproj">
       <Project>{be92c329-a939-49ac-89ec-89030e68d0f1}</Project>
       <Name>DataProcessSolution.API.Frontend</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProcessSolution.DAL\DataProcessSolution.DAL.csproj">
+      <Project>{1026C82D-C3B9-45DC-B535-84BF6BA49EDF}</Project>
+      <Name>DataProcessSolution.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProcessSolution.FileHandlingService\DataProcessSolution.FileHandlingService.csproj">
+      <Project>{D4ECF6DA-3F16-4192-A37A-FCC1912E38D2}</Project>
+      <Name>DataProcessSolution.FileHandlingService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DataProcessSolution.SharedObjects\DataProcessSolution.SharedObjects.csproj">
+      <Project>{024DCAE5-FF72-4212-97D2-EDBC064721A8}</Project>
+      <Name>DataProcessSolution.SharedObjects</Name>
     </ProjectReference>
     <ProjectReference Include="..\DataProcessSolution.WorkerRole\DataProcessSolution.WorkerRole.csproj">
       <Project>{EFD9C8F4-5054-4EAB-BF36-6538F92C6624}</Project>

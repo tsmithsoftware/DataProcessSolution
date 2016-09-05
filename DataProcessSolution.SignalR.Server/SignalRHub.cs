@@ -42,7 +42,7 @@ namespace DataProcessSolution.SignalR.Server
                               $"{file.AddressFileReference.Name} in container {file.AddressFileReference.ContainerName}");
             Thread.Sleep(1000); //calling WCF Service
             FileHandlerService service = new FileHandlerService();
-            return service.ProcessFile(file);
+            return service.ProcessFile(file, Context.ConnectionId);
         }
     }
 }

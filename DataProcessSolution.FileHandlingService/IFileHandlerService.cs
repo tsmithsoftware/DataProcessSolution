@@ -8,6 +8,6 @@ namespace DataProcessSolution.FileHandlingService
     {
         [OperationContract]
         //string ProcessFile(ProcessedFile processedFile);
-        FileReference ProcessFile(JobReference job);
+        FileReference ProcessFile(JobReference job,string connectionId);
     }
 }

@@ -21,8 +21,6 @@ namespace DataProcessSolution.WorkerRole.Operations
             {
                 foreach (Row row in rows)
                 {
-                    //var testObject = row.ToObject<UserFullRecord>();
-                    //file.Write(testObject);
                     UserFullRecord record = new UserFullRecord()
                     {
                         UserName = $"{row["FirstName"]} {row["LastName"]}",
@@ -31,7 +29,6 @@ namespace DataProcessSolution.WorkerRole.Operations
                     };
 
                     file.Write(record);
-                    //pass through rows to next step if needed
                     yield return row;
                 }
             }
