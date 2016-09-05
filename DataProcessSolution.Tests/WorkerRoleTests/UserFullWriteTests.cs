@@ -20,7 +20,7 @@ namespace DataProcessSolution.Tests.WorkerRoleTests
         {
             //Setup
             string fileLocation = $"{_baseDirectory}\\ResultsFile.csv";
-            UserFullWrite sut = new UserFullWrite(fileLocation);
+            FirstStageUserFullWrite sut = new FirstStageUserFullWrite(fileLocation);
             IEnumerable<Row> rows = new List<Row>()
             {
                 Row.FromObject(new UserFullRecord()

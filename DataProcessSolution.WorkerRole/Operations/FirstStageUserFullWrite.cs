@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using DataProcessSolution.WorkerRole.Entities;
 using Rhino.Etl.Core;
 using Rhino.Etl.Core.Files;
@@ -10,10 +6,10 @@ using Rhino.Etl.Core.Operations;
 
 namespace DataProcessSolution.WorkerRole.Operations
 {
-    public class UserFullWrite:AbstractOperation
+    public class FirstStageUserFullWrite:AbstractOperation
     {
         public string FilePath { get; set; }
-        public UserFullWrite(string path)
+        public FirstStageUserFullWrite(string path)
         {
             FilePath = path;
         }
@@ -25,8 +21,15 @@ namespace DataProcessSolution.WorkerRole.Operations
             {
                 foreach (Row row in rows)
                 {
-                    file.Write(row.ToObject<UserFullRecord>());
-                    
+                    //var testObject = row.ToObject<UserFullRecord>();
+                    //file.Write(testObject);
+                    UserFullRecord record = new UserFullRecord()
+                    {
+                        UserName = $"{row["FirstName"]} {row["LastName"]}",
+                        UserAddress = $"{row["Address"]}"
+                    };
+
+                    file.Write(record);
                     //pass through rows to next step if needed
                     yield return row;
                 }

@@ -94,9 +94,10 @@
     <Compile Include="Entities\UserNameRecord.cs" />
     <Compile Include="Entities\UserOrderRecord.cs" />
     <Compile Include="NumberGenerator.cs" />
-    <Compile Include="Operations\JoinUserRecords.cs" />
+    <Compile Include="Operations\FirstStageJoinUserRecords.cs" />
+    <Compile Include="Operations\SecondStageJoinUserRecords.cs" />
     <Compile Include="Operations\UserAddressRead.cs" />
-    <Compile Include="Operations\UserFullWrite.cs" />
+    <Compile Include="Operations\FirstStageUserFullWrite.cs" />
     <Compile Include="Operations\UserNameRead.cs" />
     <Compile Include="Operations\UserOrderRead.cs" />
     <Compile Include="Processes\MainProcess.cs" />

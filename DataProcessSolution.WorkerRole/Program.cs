@@ -12,7 +12,7 @@ namespace DataProcessSolution.WorkerRole
             process.NamesFile = ConfigurationManager.AppSettings["NamesFileLocation"];
             process.AddressesFile = ConfigurationManager.AppSettings["AddressesFileLocation"];
             process.OrdersFile = ConfigurationManager.AppSettings["OrdersFileLocation"];
-            process.OutputFile = ConfigurationManager.AppSettings["OutputFileLocation"];
+            process.FirstStageOutputFile = ConfigurationManager.AppSettings["OutputFileLocation"];
 
             process.Execute();
         }
