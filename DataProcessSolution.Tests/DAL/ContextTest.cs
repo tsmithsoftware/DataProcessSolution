@@ -13,6 +13,7 @@ namespace DataProcessSolution.Tests.DAL
         {
             using (var db = new JobContext())
             {
+                var x = db.JobTables;
                 var query = from b in db.JobTables
                             orderby b.JobId
                             select b;

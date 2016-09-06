@@ -23,7 +23,7 @@ namespace WCFWorkerRole
 
         public override void Run()
         {
-            Trace.TraceInformation("WCFWorkerRole is running");
+            //Trace.TraceInformation("WCFWorkerRole is running");
 
             try
             {
@@ -44,17 +44,17 @@ namespace WCFWorkerRole
             // see the MSDN topic at http://go.microsoft.com/fwlink/?LinkId=166357.
 
             bool result = base.OnStart();
-            Trace.TraceInformation("WCFWorkerRole has been started");
+            //Trace.TraceInformation("WCFWorkerRole has been started");
             try
             {
-                Trace.TraceInformation("Creating WCF Host...");
+               // Trace.TraceInformation("Creating WCF Host...");
                 CreateServiceHost();
             }
             catch (Exception e)
             {
-                Trace.TraceError(e.Message);
+                //Trace.TraceError(e.Message);
             }
-            Trace.TraceInformation("WCF Host Created.");
+            //Trace.TraceInformation("WCF Host Created.");
             return result;
         }
 
@@ -69,25 +69,25 @@ namespace WCFWorkerRole
                 RoleEnvironment.CurrentRoleInstance.InstanceEndpoints["WCFEndpoint"];
             string endpoint = $"net.tcp://{externalEndPoint.IPEndpoint}/FileProcessingService";
 
-            Trace.TraceInformation($"Service endpoint running at {endpoint}");
+            //Trace.TraceInformation($"Service endpoint running at {endpoint}");
 
             _serviceHost.AddServiceEndpoint(typeof(IFileHandlerService), binding, endpoint);
             
-            Trace.TraceInformation("Opening host...");
+           // Trace.TraceInformation("Opening host...");
 
             _serviceHost.Open();
         }
 
         public override void OnStop()
         {
-            Trace.TraceInformation("WCFWorkerRole is stopping");
+            //Trace.TraceInformation("WCFWorkerRole is stopping");
 
             this._cancellationTokenSource.Cancel();
             this._runCompleteEvent.WaitOne();
 
             base.OnStop();
 
-            Trace.TraceInformation("WCFWorkerRole has stopped");
+            //Trace.TraceInformation("WCFWorkerRole has stopped");
         }
 
         private async Task RunAsync(CancellationToken cancellationToken)
@@ -95,7 +95,7 @@ namespace WCFWorkerRole
             // TODO: Replace the following with your own logic.
             while (!cancellationToken.IsCancellationRequested)
             {
-                Trace.TraceInformation("Working");
+                //Trace.TraceInformation("Working");
                 await Task.Delay(1000);
             }
         }

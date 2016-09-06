@@ -5,7 +5,7 @@ namespace DataProcessSolution.DAL
     public partial class JobContext : DbContext
     {
         public JobContext()
-            : base("name=JobModel")
+            : base("Data Source=dataprocessing.database.windows.net;Initial Catalog=DataProcessingDatabase;persist security info=True;user id=useradmin;password=Jacky007;MultipleActiveResultSets=True;App=EntityFramework")
         {
         }
 

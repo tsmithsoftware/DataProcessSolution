@@ -23,7 +23,7 @@ namespace LoadBalancerWorkerRole
 
         public override void Run()
         {
-            Trace.WriteLine("Starting processing of messages");
+            //Trace.WriteLine("Starting processing of messages");
 
             // Initiates the message pump and callback is invoked for each message that is received, calling close on the client will stop the pump.
             Client.OnMessage((receivedMessage) =>
@@ -31,7 +31,7 @@ namespace LoadBalancerWorkerRole
                     try
                     {
                         // Process the message
-                        Trace.WriteLine("Processing Service Bus message: " + receivedMessage.SequenceNumber.ToString());
+                        //Trace.WriteLine("Processing Service Bus message: " + receivedMessage.SequenceNumber.ToString());
                     }
                     catch
                     {
