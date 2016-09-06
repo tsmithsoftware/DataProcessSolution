@@ -9,6 +9,9 @@
       <Import moduleName="RemoteAccess" />
       <Import moduleName="RemoteForwarder" />
     </Imports>
+    <Endpoints>
+      <InputEndpoint name="WCFEndpoint" protocol="tcp" port="10100" />
+    </Endpoints>
   </WorkerRole>
   <WorkerRole name="LoadBalancerWorkerRole" vmsize="Small">
     <ConfigurationSettings>

@@ -6,16 +6,25 @@ using DataProcessSolution.DAL.Entities;
 
 namespace DataProcessSolution.FileHandlingService
 {
-    [ServiceContract]
+    [ServiceBehavior(IncludeExceptionDetailInFaults = true)]
     public class FileHandlerService:IFileHandlerService
     {
-        public JobContext _context { get; set; }
+        private JobContext Context { get; set; }
+        public JobContext _context
+        {
+            get
+            {
+                if (Context != null) return Context;
+                return new JobContext();
+            }
+            set { Context = value; }
+        }
+
         public string ProcessFile(ProcessedFile processedFile)
         {
             return $"File name {processedFile.Name} at location {processedFile.BlobReference} processed.";
         }
 
-        [OperationContract]
         public FileReference ProcessFile(JobReference job,string connectionId)
         {
             using (_context)
