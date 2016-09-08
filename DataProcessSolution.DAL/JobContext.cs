@@ -13,8 +13,6 @@ namespace DataProcessSolution.DAL
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<JobTable>()
-                .Property(e => e.Status);
         }
     }
 }

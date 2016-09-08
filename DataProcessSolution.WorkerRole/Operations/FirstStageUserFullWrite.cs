@@ -23,9 +23,9 @@ namespace DataProcessSolution.WorkerRole.Operations
                 {
                     UserFullRecord record = new UserFullRecord()
                     {
-                        UserName = $"{row["FirstName"]} {row["LastName"]}",
-                        UserAddress = $"{row["Address"]}",
-                        UserOrder = $"{row["Order"]}"
+                        UserName = $"{row["UserName"]}",
+                        UserAddress = $"{row["UserAddress"]}",
+                        UserOrder = $"{row["UserOrder"]}"
                     };
 
                     file.Write(record);
