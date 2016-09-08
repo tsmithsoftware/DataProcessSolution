@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using NUnit.Framework;
 using DataProcessSolution.WorkerRole.Operations;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
@@ -34,7 +32,7 @@ namespace DataProcessSolution.Tests.WorkerRoleTests
             UserNameRead read = new UserNameRead(AppDomain.CurrentDomain.BaseDirectory + "\\TestFiles\\Names.csv");
             var result = read.Execute(null);
             List<Row> extractedRows = result.ToList();
-            Assert.IsTrue(extractedRows.Count == 3);
+            Assert.IsTrue(extractedRows.Count == 2);
             Assert.IsTrue(extractedRows[0]["Id"].Equals(1));
             Assert.IsTrue(extractedRows[0]["FirstName"].Equals("Timothy"));
             Assert.IsTrue(extractedRows[0]["LastName"].Equals("Smith"));
